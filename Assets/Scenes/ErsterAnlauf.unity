@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a7e9a1bb7df504198377304289be58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
+  rotationSpeed: 200
 --- !u!1 &713787547
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,9 +329,9 @@ Canvas:
   m_GameObject: {fileID: 713787547}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 940373289}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -799,14 +799,14 @@ RectTransform:
   m_GameObject: {fileID: 1546004436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3883, y: 1.3047, z: 1}
+  m_LocalScale: {x: 0.6215835, y: 0.68171877, z: 1}
   m_Children: []
   m_Father: {fileID: 713787551}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -480, y: 311}
+  m_AnchoredPosition: {x: -280.9, y: 159.1}
   m_SizeDelta: {x: 285.6068, y: 63.8351}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546004438
@@ -893,14 +893,14 @@ RectTransform:
   m_GameObject: {fileID: 1744301145}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.5308, z: 1}
+  m_LocalScale: {x: 0.44773, y: 0.7998583, z: 1}
   m_Children: []
   m_Father: {fileID: 713787551}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -478, y: 351}
+  m_AnchoredPosition: {x: -280, y: 180}
   m_SizeDelta: {x: 285.6068, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744301147
@@ -1148,4 +1148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 0
-  speed: 0
+  speed: 10
