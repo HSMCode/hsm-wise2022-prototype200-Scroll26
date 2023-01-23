@@ -6,6 +6,9 @@ public class gameOver : MonoBehaviour
 {
     private bool GameOver = false;
     public GameObject gameOverPanel;
+    private EnemyCounter _enemyCounterScript;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +17,10 @@ public class gameOver : MonoBehaviour
         GameOver = false;
         //and the time normal in case the game has been restarted.
         Time.timeScale = 1;
+
+        //find the enemy counter script to calculate the final score when game over
+        _enemyCounterScript = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>();
+
     }
 
     // Update is called once per frame
@@ -37,6 +44,8 @@ public class gameOver : MonoBehaviour
         {   
             //set the game over bool to true
             GameOver = true;
+            //give the Enemy counter script the game over bool for the final score
+            _enemyCounterScript.gameOver = true;
         }
     }
 }

@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyedEnemies: 0
   scoreText: 'Enemies: '
+  gameOver: 0
 --- !u!114 &378053220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,30 +1052,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1492294402}
-    - target: {fileID: 7728697878758144238, guid: 4e6654cd36616d54da371ee000745c3d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7728697878758144238, guid: 4e6654cd36616d54da371ee000745c3d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: restartGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 7728697878758144239, guid: 4e6654cd36616d54da371ee000745c3d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7728697878758144239, guid: 4e6654cd36616d54da371ee000745c3d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -147
-      objectReference: {fileID: 0}
-    - target: {fileID: 7728697878934753282, guid: 4e6654cd36616d54da371ee000745c3d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7728697878934753282, guid: 4e6654cd36616d54da371ee000745c3d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 373
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e6654cd36616d54da371ee000745c3d, type: 3}
 --- !u!224 &1562849132 stripped

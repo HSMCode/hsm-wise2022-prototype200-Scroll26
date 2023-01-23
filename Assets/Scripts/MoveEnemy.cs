@@ -15,8 +15,7 @@ public class MoveEnemy : MonoBehaviour
     
     void Start()
     {
-       _enemyCounterScript = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>();
-      
+        _enemyCounterScript = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>();
     }
 
     
@@ -46,6 +45,7 @@ public class MoveEnemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) 
     {
+        //when hit by the weapon, update the score and destroy the enemy game object
         if (collision.gameObject.CompareTag("Weapon"))
         {
             _enemyCounterScript.destroyedEnemies++;
