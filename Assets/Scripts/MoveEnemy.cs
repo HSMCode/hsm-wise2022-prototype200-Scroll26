@@ -10,15 +10,16 @@ public class MoveEnemy : MonoBehaviour
     private Transform Player;
     private Vector3 movement;
     public float enemySpeed = 2f;
+    private EnemyCounter _enemyCounterScript;
    
-    // Start is called before the first frame update
+    
     void Start()
     {
-       
+       _enemyCounterScript = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>();
       
     }
 
-    // Update is called once per frame
+    
     void Update()
     {   
         //find the player and store its position
@@ -41,5 +42,17 @@ public class MoveEnemy : MonoBehaviour
     {   
         //move the enemy
         transform.position = (Vector3)transform.position + (direction * enemySpeed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision) 
+    {
+        if (collision.gameObject.CompareTag("Weapon"))
+        {
+            _enemyCounterScript.destroyedEnemies++;
+            
+            Destroy(this.gameObject);
+            
+        }
+        
     }
 }
