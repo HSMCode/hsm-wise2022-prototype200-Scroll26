@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EnemyCounter : MonoBehaviour
 {
     public int destroyedEnemies;
+    public int survivedTime;
     private int currentScore = 0;
     private Text scoreUI;
     public string scoreText = "Enemies: ";
@@ -30,11 +31,12 @@ public class EnemyCounter : MonoBehaviour
 
     void LateUpdate() 
     {
-        //When Game Over, push the enemy counter to the score script
+        //When Game Over, push the counters to the score script
         if (gameOver)
         {
             _scoreScript = GameObject.Find("Score").GetComponent<Score>();
             _scoreScript.destroyedEnemies = currentScore;
+            _scoreScript.Time = survivedTime;
         }
     }
 }

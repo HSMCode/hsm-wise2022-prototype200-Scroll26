@@ -10,7 +10,13 @@ public class TimerCountdown : MonoBehaviour
     public int seconds = 0;
     // bool is anfangs immer falsch, daher startet Coroutine direkt
     public bool deductingTime;
+    private EnemyCounter _enemyCounterScript;
 
+
+void Start() 
+{
+    _enemyCounterScript = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>();
+}
 
 
 void Update()
@@ -20,10 +26,11 @@ void Update()
    {
        deductingTime = true;
         StartCoroutine(AddSecond());
-
    }
+
+   _enemyCounterScript.survivedTime = seconds;
 }
-//Wenn die Coroutine angehalten werden soll (GameOver), einfach bool positiv setzen in ner seperaten if-Funktion :handshake:
+
    IEnumerator AddSecond()
    {
        yield return new WaitForSeconds(1);

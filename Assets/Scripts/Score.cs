@@ -7,6 +7,8 @@ public class Score : MonoBehaviour
 {
     public int destroyedEnemies;
     private int currentScore = 0;
+    public int Time;
+    private int currentTime = 0;
     private Text scoreUI;
     
     void Start()
@@ -18,7 +20,8 @@ public class Score : MonoBehaviour
     void Update()
     {
         currentScore = destroyedEnemies;
-        scoreUI.text = "Time Survived:" + "\nEnemies killed: " + currentScore.ToString();
+        currentTime = Time;
+        scoreUI.text = "Time Survived: " + currentTime.ToString() + " sec" + "\nEnemies killed: " + currentScore.ToString();
         
     }
 }
