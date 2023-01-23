@@ -11,6 +11,8 @@ public class SpawnEnemies : MonoBehaviour
     Vector3 randomSpawnPosition;
 
     private float randomSpawnX, randomSpawnZ;
+    public float difficulty = 0f;
+    public float diffIncrease = 0.1f;
 
 
     // Start is called before the first frame update
@@ -27,7 +29,7 @@ public class SpawnEnemies : MonoBehaviour
         time += Time.deltaTime;
 
         // if that number is equal to/bigger than the number of seconds between spawns
-        if (time >= secondsBetweenSpawns)
+        if (time >= secondsBetweenSpawns - difficulty)
         {
             // spawn another enemy
             spawnEnemy();
@@ -85,5 +87,12 @@ public class SpawnEnemies : MonoBehaviour
 
         //spawn the randomized enemy at the randomized position
         Instantiate(Enemies[randomIndex], randomSpawnPosition, Quaternion.identity);
+
+
+        //add to difficulty, which will increase spawnrate over time
+        if(difficulty < 3.6f)
+        {
+            difficulty = difficulty + diffIncrease;
+        }
     }
 }
