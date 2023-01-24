@@ -12,7 +12,7 @@ public class SpawnEnemies : MonoBehaviour
 
     private float randomSpawnX, randomSpawnZ;
     public float difficulty = 0f;
-    public float diffIncrease = 0.1f;
+    public float diffIncrease = 0.2f;
 
 
     // Start is called before the first frame update
