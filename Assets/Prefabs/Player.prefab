@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 241659369707289112}
   - component: {fileID: 241659369707289113}
   - component: {fileID: 2031589209103824180}
+  - component: {fileID: 2036814809824005854}
   m_Layer: 0
   m_Name: Little_Soul
   m_TagString: Untagged
@@ -96,6 +97,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flip: 0
+--- !u!95 &2036814809824005854
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241659369707289115}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7cdd663e612325458353453a94c21f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &241659370127627855
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +172,8 @@ GameObject:
   - component: {fileID: 241659370718762470}
   - component: {fileID: 241659370718762467}
   - component: {fileID: 241659370718762471}
+  - component: {fileID: 1124410790911445908}
+  - component: {fileID: 2291325862870326395}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -168,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 241659370718762466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.83831, y: 0.83831, z: 0.83831}
   m_Children:
   - {fileID: 241659370127627852}
   - {fileID: 241659369707289112}
@@ -186,7 +208,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &241659370718762471
 MonoBehaviour:
@@ -202,6 +224,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 0
   speed: 5
+  right: 0
+--- !u!114 &1124410790911445908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241659370718762466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dedda00f4f12d947a6a7532c573be48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 0}
+--- !u!114 &2291325862870326395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241659370718762466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1144ccf62acf4d24aa63322d449b085a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &241659371057465592
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241659371057465592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.35, y: 0.28999996, z: 0}
+  m_LocalPosition: {x: 1.35, y: 0.5, z: 0}
   m_LocalScale: {x: 0.43441, y: 0.43441, z: 0.43441}
   m_Children:
   - {fileID: 241659371438665592}
@@ -308,6 +356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 241659371438665592}
   - component: {fileID: 241659371438665593}
+  - component: {fileID: 8739816471443321780}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -380,3 +429,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8739816471443321780
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241659371438665595}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2d7b3ff0952bbd40969fc37db599a4b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
