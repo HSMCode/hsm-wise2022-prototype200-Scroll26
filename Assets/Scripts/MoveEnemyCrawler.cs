@@ -7,12 +7,11 @@ using UnityEngine.AI;
 
 public class MoveEnemyCrawler : MonoBehaviour
 {
-    private Transform Player;
-    private Vector3 movement;
-    public float enemySpeed = 2f;
+    private Transform _player;
+    private Vector3 _movement;
+    private float _enemySpeed = 2f;
     private EnemyCounter _enemyCounterScript;
     private SpriteFlip _spriteFlipScript;
-    public bool right;
    
     
     void Start()
@@ -25,23 +24,21 @@ public class MoveEnemyCrawler : MonoBehaviour
     void Update()
     {   
         //find the player and store its position
-        Player = GameObject.Find("Player").transform;
+        _player = GameObject.Find("Player").transform;
 
         //calculate and store the enemies direction
-        Vector3 direction = Player.position - transform.position;
+        Vector3 direction = _player.position - transform.position;
 
-        movement = direction;
-        movement.Normalize();
+        _movement = direction;
+        _movement.Normalize();
 
         //check for movement direction
       if (direction.x > 0)
       {
-        right = true;
         _spriteFlipScript.flip = true;
       }
       else if (direction.x < 0)
       {
-        right = false;
         _spriteFlipScript.flip = false;
       }
     }
@@ -49,13 +46,13 @@ public class MoveEnemyCrawler : MonoBehaviour
     private void FixedUpdate()
     {
         //execute the enemy movement once per frame
-        moveCharacter(movement);
+        moveCharacter(_movement);
     }
 
     void moveCharacter(Vector3 direction)
     {   
         //move the enemy
-        transform.position = (Vector3)transform.position + (direction * enemySpeed * Time.deltaTime);
+        transform.position = (Vector3)transform.position + (direction * _enemySpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision) 

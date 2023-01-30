@@ -6,22 +6,22 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public int destroyedEnemies;
-    private int currentScore = 0;
+    private int _currentScore = 0;
     public int Time;
-    private int currentTime = 0;
-    private Text scoreUI;
+    private int _currentTime = 0;
+    private Text _scoreUI;
     
     void Start()
     {
-        scoreUI = this.gameObject.GetComponent<Text>();
+        _scoreUI = this.gameObject.GetComponent<Text>();
     }
 
     
     void Update()
     {
         //update score 
-        currentScore = destroyedEnemies;
-        currentTime = Time;
-        scoreUI.text = "Time Survived: " + currentTime.ToString() + " sec" + "\nEnemies killed: " + currentScore.ToString();  
+        _currentScore = destroyedEnemies;
+        _currentTime = Time;
+        _scoreUI.text = "Time Survived: " + _currentTime.ToString() + " sec" + "\nEnemies killed: " + _currentScore.ToString();  
     }
 }

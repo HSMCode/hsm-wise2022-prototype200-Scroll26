@@ -7,8 +7,8 @@ public class EnemyCounter : MonoBehaviour
 {
     public int destroyedEnemies;
     public int survivedTime;
-    private int currentScore = 0;
-    private Text scoreUI;
+    private int _currentScore = 0;
+    private Text _scoreUI;
     public string scoreText = "Enemies: ";
     public bool gameOver = false;
     private Score _scoreScript;
@@ -16,15 +16,15 @@ public class EnemyCounter : MonoBehaviour
 
     void Start()
     {
-        scoreUI = this.gameObject.GetComponent<Text>();  
+        _scoreUI = this.gameObject.GetComponent<Text>();  
     }
 
 
     void Update()
     {
         //Update the Score for destroyed enemies
-        currentScore = destroyedEnemies;
-        scoreUI.text = scoreText + currentScore.ToString();
+        _currentScore = destroyedEnemies;
+        _scoreUI.text = scoreText + _currentScore.ToString();
 
         
     }
@@ -35,7 +35,7 @@ public class EnemyCounter : MonoBehaviour
         if (gameOver)
         {
             _scoreScript = GameObject.Find("Score").GetComponent<Score>();
-            _scoreScript.destroyedEnemies = currentScore;
+            _scoreScript.destroyedEnemies = _currentScore;
             _scoreScript.Time = survivedTime;
         }
     }

@@ -4,13 +4,13 @@ using UnityEngine;
 public class RotateAround : MonoBehaviour
 {
 
-    public float rotationSpeed;
+    private float _rotationSpeed = 200;
     
 
     // Drehbewegung des Balles 
     void Update()
     {
-          transform.Rotate(new Vector3(0, rotationSpeed, 0) * Time.deltaTime);
+          transform.Rotate(new Vector3(0, _rotationSpeed, 0) * Time.deltaTime);
     }
 
 

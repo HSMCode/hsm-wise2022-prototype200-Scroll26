@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    private float time = 0.0f;
-    public float secondsBetweenSpawns = 4f;
-    public float spawnHeight = 1f;
+    private float _time = 0.0f;
+    private float _secondsBetweenSpawns = 4f;
+    private float _spawnHeight = 1f;
     public GameObject[] Enemies;
-    Vector3 randomSpawnPosition;
+    private Vector3 _randomSpawnPosition;
 
-    private float randomSpawnX, randomSpawnZ;
-    public float difficulty = 0f;
-    public float diffIncrease = 0.2f;
+    private float _randomSpawnX, _randomSpawnZ;
+    private float _difficulty = 0f;
+    private float _diffIncrease = 0.2f;
 
 
     
@@ -26,10 +26,10 @@ public class SpawnEnemies : MonoBehaviour
     void Update()
     {
         // store seconds passed (since the last spawn) in a variable called time
-        time += Time.deltaTime;
+        _time += Time.deltaTime;
 
         // if that number is equal to/bigger than the number of seconds between spawns
-        if (time >= secondsBetweenSpawns - difficulty)
+        if (_time >= _secondsBetweenSpawns - _difficulty)
         {
             // spawn another enemy
             spawnEnemy();
@@ -41,7 +41,7 @@ public class SpawnEnemies : MonoBehaviour
     private void spawnEnemy()
     {
         //reset the passed time since the last spawn to 0
-        time = 0.0f;
+        _time = 0.0f;
 
         //randomize a spawn position:
         int a = Random.Range(0, 2);
@@ -54,13 +54,13 @@ public class SpawnEnemies : MonoBehaviour
                 switch (b)
                 {
                     case 0: // x is -10
-                        randomSpawnX = -10;
+                        _randomSpawnX = -10;
                         break;
                     case 1: // x is 10
-                        randomSpawnX = 10;
+                        _randomSpawnX = 10;
                         break;
                 }
-                randomSpawnZ = Random.Range(-6, 7);
+                _randomSpawnZ = Random.Range(-6, 7);
 
                 break;
 
@@ -69,30 +69,30 @@ public class SpawnEnemies : MonoBehaviour
                 switch (c)
                 {
                     case 0: // z is -6
-                        randomSpawnZ = -6;
+                        _randomSpawnZ = -6;
                         break;
                     case 1: // z is 6
-                        randomSpawnZ = 6;
+                        _randomSpawnZ = 6;
                         break;
                 }
-                randomSpawnX = Random.Range(-10, 11);
+                _randomSpawnX = Random.Range(-10, 11);
                 break;
         }
 
         //store the spawn position
-        randomSpawnPosition = new Vector3(randomSpawnX, spawnHeight, randomSpawnZ);
+        _randomSpawnPosition = new Vector3(_randomSpawnX, _spawnHeight, _randomSpawnZ);
 
         //randomize an enemy listed in the array
         int randomIndex = Random.Range(0, Enemies.Length);
 
         //spawn the randomized enemy at the randomized position
-        Instantiate(Enemies[randomIndex], randomSpawnPosition, Quaternion.identity);
+        Instantiate(Enemies[randomIndex], _randomSpawnPosition, Quaternion.identity);
 
 
         //add to difficulty, which will increase spawnrate over time
-        if(difficulty < 3.6f)
+        if(_difficulty < 3.6f)
         {
-            difficulty = difficulty + diffIncrease;
+            _difficulty = _difficulty + _diffIncrease;
         }
     }
 }

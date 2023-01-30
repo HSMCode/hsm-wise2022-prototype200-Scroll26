@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class TimerCountdown : MonoBehaviour
 {
     public GameObject timeDisplay;
-    public int seconds = 0;
+    private int _seconds = 0;
     // bool is anfangs immer falsch, daher startet Coroutine direkt
-    public bool deductingTime;
+    private bool _deductingTime;
     private EnemyCounter _enemyCounterScript;
 
 
@@ -22,23 +22,23 @@ void Start()
 void Update()
 {
 
-   if(deductingTime==false)
+   if(_deductingTime==false)
    {
-       deductingTime = true;
+       _deductingTime = true;
         StartCoroutine(AddSecond());
    }
 
     //push survived seconds to enemy counter script for highscore
-   _enemyCounterScript.survivedTime = seconds;
+   _enemyCounterScript.survivedTime = _seconds;
 }
 
     //Timer
    IEnumerator AddSecond()
    {
        yield return new WaitForSeconds(1);
-       seconds+=1;
-       timeDisplay.GetComponent<Text>().text = "Time: " + seconds;
-       deductingTime = false;
+       _seconds += 1;
+       timeDisplay.GetComponent<Text>().text = "Time: " + _seconds;
+       _deductingTime = false;
    }
    
 }

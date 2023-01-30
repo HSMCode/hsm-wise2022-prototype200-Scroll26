@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class gameOver : MonoBehaviour
 {
-    private bool GameOver = false;
+    private bool _gameOver = false;
     public GameObject gameOverPanel;
     private EnemyCounter _enemyCounterScript;
 
@@ -12,7 +12,7 @@ public class gameOver : MonoBehaviour
     void Start()
     {   
         //reset game over to false 
-        GameOver = false;
+        _gameOver = false;
         //and the time normal in case the game has been restarted.
         Time.timeScale = 1;
 
@@ -25,7 +25,7 @@ public class gameOver : MonoBehaviour
     void Update()
     {
         //if the game is over
-        if (GameOver)
+        if (_gameOver)
         {   
             //pause the time
             Time.timeScale = 0;
@@ -41,7 +41,7 @@ public class gameOver : MonoBehaviour
         if (collision.transform.tag == "Enemy")
         {   
             //set the game over bool to true
-            GameOver = true;
+            _gameOver = true;
             //give the Enemy counter script the game over bool for the final score
             _enemyCounterScript.gameOver = true;
         }
