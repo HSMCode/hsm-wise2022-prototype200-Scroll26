@@ -7,6 +7,7 @@ public class gameOver : MonoBehaviour
     private bool _gameOver = false;
     public GameObject gameOverPanel;
     private EnemyCounter _enemyCounterScript;
+    private AudioSource _deathSound;
 
 
     void Start()
@@ -18,6 +19,9 @@ public class gameOver : MonoBehaviour
 
         //find the enemy counter script to calculate the final score when game over
         _enemyCounterScript = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>();
+
+        //get Audio Source
+        _deathSound = GetComponent<AudioSource>();
 
     }
 
@@ -44,6 +48,9 @@ public class gameOver : MonoBehaviour
             _gameOver = true;
             //give the Enemy counter script the game over bool for the final score
             _enemyCounterScript.gameOver = true;
+
+            //play death Sound
+            _deathSound.Play();
         }
     }
 }
