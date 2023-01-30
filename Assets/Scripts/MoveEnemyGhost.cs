@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MoveEnemGhoul : MonoBehaviour
+public class MoveEnemyGhost : MonoBehaviour
 {
     private Transform Player;
     private Vector3 movement;
@@ -18,7 +18,7 @@ public class MoveEnemGhoul : MonoBehaviour
     void Start()
     {
         _enemyCounterScript = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>();
-        _spriteFlipScript = transform.Find("Ghoul_Walk_1").GetComponent<SpriteFlip>();
+        _spriteFlipScript = transform.Find("Ghost_Walk_1").GetComponent<SpriteFlip>();
     }
 
     

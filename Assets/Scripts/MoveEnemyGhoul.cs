@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MoveEnemGhoul : MonoBehaviour
+public class MoveEnemyGhoul : MonoBehaviour
 {
     private Transform Player;
     private Vector3 movement;
