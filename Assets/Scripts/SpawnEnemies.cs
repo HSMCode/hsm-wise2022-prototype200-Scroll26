@@ -90,7 +90,7 @@ public class SpawnEnemies : MonoBehaviour
 
 
         //add to difficulty, which will increase spawnrate over time
-        if(_difficulty < 3.6f)
+        if(_difficulty < 3f)
         {
             _difficulty = _difficulty + _diffIncrease;
         }
