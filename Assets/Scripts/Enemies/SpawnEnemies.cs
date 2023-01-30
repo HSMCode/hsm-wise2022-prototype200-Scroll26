@@ -11,9 +11,9 @@ public class SpawnEnemies : MonoBehaviour
     private Vector3 _randomSpawnPosition;
 
     private float _randomSpawnX, _randomSpawnZ;
-    public float _difficulty = 0f;
+    private float _difficulty = 0f;
     private float _diffIncrease = 0.1f;
-    public float _maxDifficulty = 3f;
+    private float _maxDifficulty = 3f;
     private InfoSaver _infoSaverScript;
 
 

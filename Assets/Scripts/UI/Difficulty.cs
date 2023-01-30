@@ -12,12 +12,15 @@ public class Difficulty : MonoBehaviour
     {
         _difficultySlider = GetComponent<Slider>();
         _infoSaverScript = GameObject.Find("InfoSaver").GetComponent<InfoSaver>();
+
+        //get default/previous value from Info Saver Script
         _difficultySlider.value = _infoSaverScript.difficulty;      
     }
 
 
     void Update()
     {
+        //save difficulty in Info Saver Script
         _infoSaverScript.difficulty = _difficultySlider.value;
     }
 }

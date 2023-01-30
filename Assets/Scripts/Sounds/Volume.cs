@@ -18,6 +18,7 @@ public class Volume : MonoBehaviour
 
     void Update()
     {   
+        //save volume in Info Saver Script
         _infoSaverScript.volume = _volumeSlider.value;
     }
 }
