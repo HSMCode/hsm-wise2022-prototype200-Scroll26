@@ -9,8 +9,6 @@ public class gameOver : MonoBehaviour
     private EnemyCounter _enemyCounterScript;
 
 
-
-    // Start is called before the first frame update
     void Start()
     {   
         //reset game over to false 
@@ -23,7 +21,7 @@ public class gameOver : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         //if the game is over

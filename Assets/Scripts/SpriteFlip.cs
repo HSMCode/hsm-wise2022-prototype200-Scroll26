@@ -7,16 +7,17 @@ public class SpriteFlip : MonoBehaviour
     private SpriteRenderer _spriteRenderer; 
     public bool flip;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        //flip the sprite according to movement direction
         if (flip)
         {
             _spriteRenderer.flipX = true;

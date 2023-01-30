@@ -15,14 +15,14 @@ public class SpawnEnemies : MonoBehaviour
     public float diffIncrease = 0.2f;
 
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         // spawn a single enemy when game starts
         spawnEnemy();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         // store seconds passed (since the last spawn) in a variable called time

@@ -28,9 +28,11 @@ void Update()
         StartCoroutine(AddSecond());
    }
 
+    //push survived seconds to enemy counter script for highscore
    _enemyCounterScript.survivedTime = seconds;
 }
 
+    //Timer
    IEnumerator AddSecond()
    {
        yield return new WaitForSeconds(1);

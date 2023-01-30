@@ -7,11 +7,6 @@ public class EscapeMenu : MonoBehaviour
 
     public GameObject pauseMenu;
 
-    void Start()
-    {
-        
-    }
-
 
     void Update()
     {

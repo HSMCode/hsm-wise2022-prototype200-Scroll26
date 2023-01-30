@@ -19,9 +19,9 @@ public class Score : MonoBehaviour
     
     void Update()
     {
+        //update score 
         currentScore = destroyedEnemies;
         currentTime = Time;
-        scoreUI.text = "Time Survived: " + currentTime.ToString() + " sec" + "\nEnemies killed: " + currentScore.ToString();
-        
+        scoreUI.text = "Time Survived: " + currentTime.ToString() + " sec" + "\nEnemies killed: " + currentScore.ToString();  
     }
 }
