@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Volume : MonoBehaviour
+public class Difficulty : MonoBehaviour
 {
-
-    private Slider _volumeSlider;
+    private Slider _difficultySlider;
     private InfoSaver _infoSaverScript;
 
     void Start()
     {
-        _volumeSlider = GetComponent<Slider>();
+        _difficultySlider = GetComponent<Slider>();
         _infoSaverScript = GameObject.Find("InfoSaver").GetComponent<InfoSaver>();
-        _volumeSlider.value = _infoSaverScript.volume;
+        _difficultySlider.value = _infoSaverScript.difficulty;      
     }
 
+
     void Update()
-    {   
-        _infoSaverScript.volume = _volumeSlider.value;
+    {
+        _infoSaverScript.difficulty = _difficultySlider.value;
     }
 }

@@ -7,17 +7,19 @@ public class MusicOptions : MonoBehaviour
 
     private AudioSource _menuMusic;
     public float volume;
+    private InfoSaver _infoSaverScript;
 
 
     void Start()
     {
         _menuMusic = GetComponent<AudioSource>();
-        
+        _infoSaverScript = GameObject.Find("InfoSaver").GetComponent<InfoSaver>();
     }
 
 
     void Update()
     {
-        _menuMusic.volume = volume;       
+        //adjust sound volume
+        _menuMusic.volume = _infoSaverScript.volume;       
     }
 }

@@ -8,6 +8,7 @@ public class gameOver : MonoBehaviour
     public GameObject gameOverPanel;
     private EnemyCounter _enemyCounterScript;
     private AudioSource _deathSound;
+    private InfoSaver _infoSaverScript;
 
 
     void Start()
@@ -22,12 +23,16 @@ public class gameOver : MonoBehaviour
 
         //get Audio Source
         _deathSound = GetComponent<AudioSource>();
+        _infoSaverScript = GameObject.Find("InfoSaver").GetComponent<InfoSaver>();
 
     }
 
     
     void Update()
     {
+        //adjust death sound volume
+        _deathSound.volume = _infoSaverScript.volume;
+
         //if the game is over
         if (_gameOver)
         {   

@@ -11,15 +11,21 @@ public class SpawnEnemies : MonoBehaviour
     private Vector3 _randomSpawnPosition;
 
     private float _randomSpawnX, _randomSpawnZ;
-    private float _difficulty = 0f;
-    private float _diffIncrease = 0.2f;
+    public float _difficulty = 0f;
+    private float _diffIncrease = 0.1f;
+    public float _maxDifficulty = 3f;
+    private InfoSaver _infoSaverScript;
 
 
     
     void Start()
     {
+        //get difficulty multiplier from Info Saver
+        _infoSaverScript = GameObject.Find("InfoSaver").GetComponent<InfoSaver>();
         // spawn a single enemy when game starts
         spawnEnemy();
+        //calculate max difficulty
+        _maxDifficulty = 2.6f + _infoSaverScript.difficulty * 0.3f;
     }
 
     
@@ -90,9 +96,9 @@ public class SpawnEnemies : MonoBehaviour
 
 
         //add to difficulty, which will increase spawnrate over time
-        if(_difficulty < 3f)
+        if(_difficulty < _maxDifficulty)
         {
-            _difficulty = _difficulty + _diffIncrease;
+            _difficulty = _difficulty + _diffIncrease * _infoSaverScript.difficulty;
         }
     }
 }
